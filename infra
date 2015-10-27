@@ -1,0 +1,27 @@
+#!/bin/bash
+user='hieu.du'
+echo -e "  1    au0001     54.249.120.223  asia_aws         	DotKR			Tokyo" 
+echo -e "  2    au2006     54.249.45.205   	            	DotTW			Tokyo"
+echo -e "  3    audev0001  54.250.137.33   asia_aws_dev     	BBWW, DotWW DEV		Tokyo"
+echo -e "  4    ju0001     54.249.31.163   jp_aws           	DotJP			Tokyo"
+echo -e "  5    ju2001     54.250.139.217             	    	DotTK(COTK)		Tokyo"
+echo -e "  6    wu0001     54.215.167.24   ww_aws_hanoi	    	NinjaWW			US"
+echo -e "  7    wu2001     54.215.167.244       					"
+echo -e "  8    wudev0001  54.215.167.20   ww_aws_hanoi_dev 	Hanoi DEV		US"
+echo -e "  9    wu0001     54.219.166.8    ww_aws_hanoi2    	DotWW			US"
+echo -e "  10   wu2001     54.219.166.23   ww_aws_hanoi2    				"
+read -p "User: $user and your choice: "
+x="$REPLY"
+case $x in
+    1) ssh $user@54.249.120.223 ;;
+    2) ssh $user@54.249.45.205 ;;
+    3) ssh $user@54.250.137.33 ;;
+    4) ssh $user@54.249.31.163 ;;
+    5) ssh $user@54.250.139.217 ;;
+    6) ssh $user@54.215.167.24 ;;
+    7) ssh $user@54.215.167.244 ;;
+    8) ssh $user@54.215.167.20 ;;
+    9) ssh $user@54.219.166.8 ;;
+    10) ssh $user@54.219.166.23 ;;
+    *) echo -e " Invalid input!";;
+esac

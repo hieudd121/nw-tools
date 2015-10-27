@@ -1,0 +1,36 @@
+#!/usr/bin/expect -f
+set host [lindex $argv 0]
+set logpath "/backup"
+set datestring [exec date +%Y%m%d]
+set timestring [exec date +%H%M%S]
+set systemTime [clock seconds]
+set now [clock format $systemTime -format  "%m_%d_%y"]
+if {!([file exists $logpath/cisco.conf.$datestring])} then {
+set MakeDir [exec mkdir $logpath/cisco.conf.$datestring]}
+#exec touch test.txt
+set user "backup"
+set pw "backup"
+set Pw "Punch1123!"
+#log_user 0
+spawn telnet $host
+expect "Username:"
+send "$user\r"
+expect "Password:"
+send "$pw\r"
+expect ">"
+send "enable\n"
+expect "Password:"
+send "$Pw\r"
+#expect "#"
+send "terminal length 0\r"
+send "show running-config\r"
+set logfile "$logpath/cisco.conf.$datestring/$host.$datestring.txt"
+log_file -noappend $logfile
+#expect { "end"{ send "exit\n" } }
+#send "show running-config\n"
+#log_user 1
+#spawn sleep 5
+send "exit\n"
+#interact
+expect eof
+exit

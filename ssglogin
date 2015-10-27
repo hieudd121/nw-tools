@@ -1,0 +1,21 @@
+#!/usr/bin/expect -f
+set host [lindex $argv 0]
+#exec touch test.txt
+set user "punchadmin"
+set pw "Punch1123!"
+#log_user 0
+spawn telnet $host
+expect "login:"
+send "$user\r"
+expect "password:"
+send "$pw\r"
+#expect ">"
+#send "enable\n"
+#expect "Password:"
+#send "$Pw\r"
+#expect "#"
+#expect { "end"{ send "exit\n" } }
+#send "show running-config\n"
+#log_user 1
+#spawn sleep 5
+interact
