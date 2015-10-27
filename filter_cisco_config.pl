@@ -33,9 +33,9 @@ for (my $i=0; $i<=$#network_range; $i++) {
     # Login to network device
     my $session = Net::Telnet::Cisco->new(host => $network_device_ip)
         or warn "  Can not connect!";
-    $session->login('backup','backup')
+    $session->login('backup','******')
         or warn "  login failed: $session->errmsg";
-    $session->enable("Punch1123!")
+    $session->enable("******")
         or warn "  enable failed: $session->errmsg";
     my $cmd = "terminal length 0\n" . "show ip int brief | i Port-channel\n";
 

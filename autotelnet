@@ -9,8 +9,8 @@ if {!([file exists $logpath/cisco.conf.$datestring])} then {
 set MakeDir [exec mkdir $logpath/cisco.conf.$datestring]}
 #exec touch test.txt
 set user "backup"
-set pw "backup"
-set Pw "Punch1123!"
+set pw "******"
+set Pw "******"
 #log_user 0
 spawn telnet $host
 expect "Username:"

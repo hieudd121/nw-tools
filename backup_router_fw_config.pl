@@ -17,7 +17,7 @@ system("mkdir -p $nw_dir");
 
 # Login to Juniper device
 my $juniper_session = new Net::Telnet::Netscreen(host=> '192.168.253.2');
-$juniper_session->login('punchadmin', 'Punch1123!');
+$juniper_session->login('punchadmin', '******');
 
 my @output = $juniper_session->cmd("set console page 0\n" . "get config\n");
     splice @output, 0, 2;
@@ -31,9 +31,9 @@ my @output = $juniper_session->cmd("set console page 0\n" . "get config\n");
 print "Start backup config of device: 192.168.253.4\n";
 my $cisco_session = Net::Telnet::Cisco->new(host => '192.168.253.4')
     or warn "  Can not connect!";
-$cisco_session->login('backup','backup')
+$cisco_session->login('backup','******')
     or warn "  login failed: $cisco_session->errmsg";
-$cisco_session->enable("Punch1123!")
+$cisco_session->enable("******")
     or warn "  enable failed: $cisco_session->errmsg";
 my $cisco_cmd = "terminal length 0\n" . "show running-config\n";
 
