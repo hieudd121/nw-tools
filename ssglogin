@@ -1,8 +1,8 @@
 #!/usr/bin/expect -f
 set host [lindex $argv 0]
 #exec touch test.txt
-set user "punchadmin"
-set pw "Punch1123!"
+set user "sample_user"
+set pw "sample_password"
 #log_user 0
 spawn telnet $host
 expect "login:"
