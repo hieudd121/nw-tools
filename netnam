@@ -2,8 +2,8 @@
 set host [lindex $argv 0]
 #exec touch test.txt
 set user "backup"
-set pw "backup"
-set Pw "netnam.punch2014"
+set pw "sample_pass"
+set Pw "sample_pass"
 #log_user 0
 spawn telnet $host
 expect "Username:"
