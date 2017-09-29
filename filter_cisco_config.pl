@@ -8,7 +8,7 @@ use Net::Telnet::Cisco;
 
 my $network_prefix = '172.21.148';
 my @network_range = (51..56, 254);
-my $backup_folder = "/backup/dena_nw_config";
+my $backup_folder = "/backup/path_dir";
 my %nw_devices = (
     '172.21.148.11' => 'han-ap-14f-01',
     '172.21.148.12' => 'han-ap-14f-02',

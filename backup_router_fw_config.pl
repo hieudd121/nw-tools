@@ -8,7 +8,7 @@ use POSIX qw(strftime);
 
 my $network_prefix = '192.168.253';
 my @network_range = (2..3);
-my $backup_folder = "/backup/dena_nw_config";
+my $backup_folder = "/backup/path_dir";
 
 # mkdir directory for update with (date)
 my $date_local = strftime "%Y.%m.%d-%H%M%S", localtime;
